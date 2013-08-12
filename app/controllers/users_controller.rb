@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def index
-    @users = User.by_karma.limit(50)
+    @page = params[:page] ? params[:page].to_i : 1
+    @users = User.by_karma.page(@page)
   end
 end
