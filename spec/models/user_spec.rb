@@ -48,4 +48,11 @@ describe User do
       user.full_name.should eq 'John Doe'
     end
   end
+
+  describe '.page' do
+    it 'returns a list of 50 users offset by the page number' do
+      65.times { |i| create(:user_with_karma, :total => 200 + i, :points => 2)}
+      expect(User.page(2).count).to eq 15
+    end
+  end
 end

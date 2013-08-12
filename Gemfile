@@ -7,6 +7,7 @@ gem 'bcrypt-ruby'
 
 gem 'pg'
 gem 'jquery-rails'
+gem 'will_paginate-bootstrap'
 
 group :development do
   gem 'quiet_assets'
@@ -22,6 +23,8 @@ group :test do
   gem 'faker'
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
+  gem 'capybara'
+  gem 'launchy'
 end
 
 group :assets do
