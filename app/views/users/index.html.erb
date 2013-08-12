@@ -10,3 +10,24 @@
     <%= render 'user_row', :user => user %>
   <% end %>
 </table>
+<div class='pagination pagination-centered'>
+  <ul>
+    <% if previous? %>
+      <li><a href='/?page=<%=@page - 1%>'>Prev</a></li>
+    <% else %>
+      <li class='disabled'><a href='#'>Prev</a></li>
+    <% end %>
+    <% floor.upto(ceil) do |page| %>
+      <% if page == @page %>
+        <li class='active'><a href="/?page=<%=page%>"><%=page%></a></li>
+      <% else %>
+        <li><a href="/?page=<%=page%>"><%=page%></a></li>
+      <% end %>
+    <% end %>
+    <% if next? %>
+      <li><a href='/?page=<%=@page + 1%>'>Next</a></li>
+    <% else %>
+      <li class='disabled'><a href='#'>Next</a></li>
+    <% end %>
+  </ul>
+</div>
